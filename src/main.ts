@@ -91,7 +91,9 @@ KD   | ¬B v C         | 3, 9 QED
         "#checking-options input:checked",
       )! as HTMLInputElement;
 
-      let rules = await (await fetch(`/${selection.value}.yaml`)).text();
+      let rules = await (
+        await fetch(`/fat-web/${selection.value}.yaml`)
+      ).text();
       await validate(state.doc.toString(), rules, result_field);
     }),
     proof_render.compute(
